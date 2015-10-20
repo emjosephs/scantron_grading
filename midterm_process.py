@@ -1,12 +1,13 @@
-#dat = open('EHJ352 Midterm F2012.dat','r')
-dat = open('ehj352apr2015.csv','r')
-grades = open('EHJ352_MultChoice_Grades_fixed.txt','w')
-stats = open('EHJ352_Question_Stats.txt','w')
+import argparse
 
-#change key as needed
-key = "d	e	c	b	c	c	d	a	b	b	d	a	b	c	b	b	a	b	c	e"
-#myKey = list(key)
-myKey = key.split()
+parser = argparse.ArgumentParser(description="parses scantron dat files")
+parser.add_argument("-d","--dat", type=str, help = "dat file")
+parser.add_argument("-g","--grades", type=str, help = "grade output")
+parser.add_argument("-s","--stats", type=str, help = "stats output")
+parser.add_argument("-k","--key", type=str, help = "keystring")
+
+myKey = list(key)
+#myKey = key.split()
 statsList = [0]*len(myKey)
 studentList = []
 
